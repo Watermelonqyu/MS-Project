@@ -1,23 +1,6 @@
 import sublime, sublime_plugin
 
 class PanelCommand(sublime_plugin.TextCommand):
-    '''
-    userfile = open("D:\\1.txt", 'r')
-    content = ""
-    userneme = ""
-    userid = " 
-   #if userfile.readline():
-        # read the file
-    for line in userfile:
-        if "username" in line:
-            username = line.split()[1]
-        else: 
-            userid = line.split()[1]
-
-        print("successfully read")
-
-    print("try get file content", userneme, userid)
-    '''
     def prompt_sequence(self, g):
         def progress(result):
             def on_done(text):
