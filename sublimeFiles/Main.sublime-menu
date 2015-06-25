@@ -1,0 +1,21 @@
+// Settings in here override those in "Default/Main.sublime-menu",
+// and are overridden in turn by file type specific settings.
+[
+    {
+        "caption": "COMP 4030",
+        "id": "Send",
+        "children": [
+        	{
+                "caption": "Set user information",
+                "id": "Panel",
+                "command": "panel"
+            },
+            {
+                "caption": "Submit program",
+                "id": "Send",
+                "command": "send"
+            }
+
+        ]
+    }
+]
