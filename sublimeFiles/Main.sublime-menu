@@ -5,10 +5,20 @@
         "caption": "COMP 4030",
         "id": "Send",
         "children": [
+            {
+                "caption": "try to print",
+                "id": "Tryprint",
+                "command": "tryprint"
+            },
         	{
                 "caption": "Set user information",
                 "id": "Panel",
                 "command": "panel"
+            },
+            {
+                "caption": "Reset server address",
+                "id": "serverAddress",
+                "command": "serveraddr"
             },
             {
                 "caption": "Submit program",

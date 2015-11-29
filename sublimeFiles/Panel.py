@@ -8,7 +8,7 @@ class PanelCommand(sublime_plugin.TextCommand):
                     userfile = open("D:\\1.txt", 'w')
                     userfile.write(text)
                 else:
-                    userfile = open("D:\\2.txt", 'w')
+                    userfile = open("D:\\1.txt", 'w')
                     userfile.write(text)
     
 
@@ -26,7 +26,7 @@ class PanelCommand(sublime_plugin.TextCommand):
         progress(None)
 
     def getUserInfo(self):
-        userid = yield ('Please input user ID (only digit)', '')
+        # userid = yield ('Please input user ID (only digit)', '')
         username = yield ('Please input user Name (real name)', '')
 
         sublime.message_dialog("successfully input information")
