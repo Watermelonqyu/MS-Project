@@ -3,18 +3,51 @@
     <head lang="en">
     <meta charset="UTF-8">
         {% if title %}
-        <title>{{ title }} - microblog</title>
+        <title>{{ title }} - Teaching</title>
         {% else %}
-        <title>Welcome to mircoblog</title>
+        <title>Welcome to Teaching website</title>
         {% endif %}
+    
+    <link href="{{ url_for('.static', filename='css/teaching.css')}}" rel="stylesheet">
+    <link href="{{ url_for('.static', filename='css/codemirror.css') }}"  rel="stylesheet">
+    
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{{ url_for('.static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('.static', filename='js/moment.min.js') }}"></script>
+    
+	<script src="{{ url_for('.static', filename='js/codemirror.js') }}"></script>
+	<script src="{{ url_for('.static', filename='js/python.js') }}"></script>
+	<script src="{{ url_for('.static', filename='js/action.js')}}"></script>
     </head>
+    
 <body>
-
-     <h1>Hi, {{ user.id }}!</h1>
-     {{ posts }}
      <!--
-
+		Start a table here!
      -->
-
+	
+    <div class="container">
+	    <div class="row">
+	        <div class="display_submission">
+	            <a href="delete_data">click here to clear the database</a>
+				<table class="table table-hover">
+						{% for oneUser in users %}
+								{% for perpost in posts %}
+									{% if perpost.user_name == oneUser.username %}
+										<tr>
+											<td width="150px"><a href= "{{ url_for('.user', username=oneUser.username, postid=perpost.id) }}">{{ oneUser.username }} </a></td>
+											<td>{{ perpost.id }}</td>
+											<td> {{ perpost.timestamp }} </td>
+											<td> <button class="deletebtn" id="deletebtn" onclick="deleteOne('{{ perpost.id }}')">delete</button></td>
+										</tr>
+										<tr>
+											<td> {{ perpost.output }} </td>
+										</tr>
+									{% endif %}
+								{% endfor %}
+						{% endfor %}
+					</table>
+	        </div>
+	    </div>
+	</div>
 </body>
 </html>
